@@ -12,9 +12,11 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 variables:
-  group: "docker hub"
-  imageName: 'fable-azure-build:$(build.buildId)'
-  imageNameLatest: 'fable-azure-build:latest'
+  - group: "docker hub"
+  - name: imageName
+    value: 'fable-azure-build:$(build.buildId)'
+  - name: imageNameLatest
+    value: 'fable-azure-build:latest'
   
 steps:
 - script: |
