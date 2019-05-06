@@ -17,7 +17,9 @@ variables:
   imageNameLatest: 'fable-azure-build:latest'
   
 steps:
-- script: docker build -t $(dockerId)/$(imageName) .
+- script: |
+    echo $(dockerId)
+    docker build -t $(dockerId)/$(imageName) .
   displayName: 'docker build'
 
 #To Dockerhub
