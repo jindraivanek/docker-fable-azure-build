@@ -36,4 +36,12 @@ steps:
 
 - script: docker push $(dockerId)/$(imageNameLatest)
   displayName: 'Push latest tag to public docker hub'
+  
+schedules:
+- cron: "0 12 * * 0"
+  displayName: Weekly Sunday build
+  branches:
+    include:
+    - releases/*
+  always: true
 
